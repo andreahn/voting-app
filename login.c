@@ -17,7 +17,7 @@ int main (int argc, char **argv) {
   // construct query
   sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
   
-
+  
   // check login information
   
   if(mysql_real_query(conn, command, 250) != 0) {
@@ -26,14 +26,16 @@ int main (int argc, char **argv) {
   }
   
   MYSQL_RES *result = mysql_store_result(conn);
-  
-  // check result (this is temporary for testing)
-  if(1) {
+  if(mysql_num_rows(result) == 1) {
+    row = mysql_fetch_row(result);
+    printf("%s\n",row[2]);
     mysql_close(conn);
     return 11;
   }
   else {
     mysql_close(conn);
+    printf(argv[1]);
+    printf(" Incorrect ID\n");
     return 12;
   }
   
