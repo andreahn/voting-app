@@ -4,6 +4,10 @@ session_start();
 
 <!DOCTYPE HTML>
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 <?php
 $retval = 0;
 $_SESSION["connected"] = 0;
@@ -19,14 +23,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 ?>
-
+<div class="login-box">
+<h2>Login</h2>
 <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post">
-  ID: <input type="text" name="login"><br>
-  Password: <input type="password" name="pass"><br>
-  <input type="submit" value="Login">
+  <div class="user-box">
+    <input type="text" name="login">
+    <label>ID</label>
+  </div>
+  <div class="user-box">
+    <input type="password" name="pass">
+    <label>Password</label>
+  </div>
+  <a>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <input type="submit" value="Login">
+</a>
 </form>
+</div> 
   
-  <?php
+<?php
   // check whether login was successful
   // login.c returns 11 if successful, 12 otherwise
 if($retval == 11) {
@@ -41,3 +59,5 @@ else if ($retval == 12) {
   echo "Incorrect id and password\n";
 }
 ?>
+</body>
+</html>
