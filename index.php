@@ -56,7 +56,7 @@ if($retval == 11) {
 }
 else if ($retval == 12) {
   $_SESSION["connected"] = 0;
-  echo "Incorrect id and password\n";
+  echo '<div class="wrong">Incorrect id and password\n</div>';
 }
 ?>
 </body>
