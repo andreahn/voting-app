@@ -18,8 +18,16 @@ int main (int argc, char **argv) {
   sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
   
 
+  // check login information
   
-  // check login information (this is temporary for testing)
+  if(mysql_real_query(conn, command, 250) != 0) {
+    printf("query failed\n");
+    exit(2);
+  }
+  
+  MYSQL_RES *result = mysql_store_result(conn);
+  
+  // check result (this is temporary for testing)
   if(1) {
     mysql_close(conn);
     return 11;
