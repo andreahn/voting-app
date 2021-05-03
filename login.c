@@ -15,10 +15,19 @@ int main (int argc, char **argv) {
   }
   
   // construct query
+  sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
+  
 
   
-  // check login information
-  
+  // check login information (this is temporary for testing)
+  if(1) {
+    mysql_close(conn);
+    return 11;
+  }
+  else {
+    mysql_close(conn);
+    return 12;
+  }
   
   return 0;
 }
