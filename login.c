@@ -22,7 +22,7 @@ int main (int argc, char **argv) {
   
   if(mysql_real_query(conn, command, 250) != 0) {
     printf("query failed\n");
-    exit(2);
+    return 0;
   }
   
   MYSQL_RES *result = mysql_store_result(conn);
