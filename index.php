@@ -42,8 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Login">
 </a>
 </form>
-</div> 
-  
+
 <?php
   // check whether login was successful
   // login.c returns 11 if successful, 12 otherwise
@@ -59,5 +58,6 @@ else if ($retval == 12) {
   echo '<div class="wrong">'.$voted[0].'</div>';
 }
 ?>
+</div> 
 </body>
 </html>
