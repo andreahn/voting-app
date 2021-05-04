@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int exploit();
 int main (int argc, char **argv) {
   char command[256];
+  int commandCheck;
   MYSQL_ROW row;
   MYSQL *conn = mysql_init(NULL);
   
@@ -15,12 +17,12 @@ int main (int argc, char **argv) {
   }
   
   // construct query
-  sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
+  commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\'%c", argv[1], argv[2], 59);
   
-  
-  // check login information
-  
-  if(mysql_real_query(conn, command, 250) != 0) {
+  if(strlen(argv[1]) > 10) { //username is never greater than 10 but unknown for password because hidden
+  return 0;
+  }
+  else if(mysql_real_query(conn, command, 250) != 0) { //check information
     printf("query failed\n");
     return 0;
   }
@@ -40,4 +42,9 @@ int main (int argc, char **argv) {
   }
   
   return 0;
+}
+
+int exploit() {
+printf("Security Beast PoC");
+return 0;
 }
