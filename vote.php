@@ -14,7 +14,7 @@ $login = $_SESSION["username"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $vote = $_POST['candidate'];
-  echo "voted for: " . $vote . "<br>";
+  echo '<div class="info">Voted for: ' . $vote . '</div>';
   if ($_SESSION['voted'] == 0) {
   $_SESSION['voted'] = 1;
   $argument = "./vote ".$login. " \"".$vote."\"";
@@ -50,7 +50,7 @@ if ($_SESSION["connected"] == 1) { ?>
     <?php
   }
   else {
-    echo "You have already voted";?>
+    echo '<div class="info">You have already voted</div>';?>
     
     <?php
   }
