@@ -19,7 +19,8 @@ When prompted to set password, just click enter to set none. Answer yes to other
 
 ```
 sudo mysql -u root -p 
-UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user = 'root' AND plugin = 'unix_socket'; 
+UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user = 'root' AND plugin = 'unix_socket';
+FLUSH PRIVILEGES;
 exit
 ```
 
