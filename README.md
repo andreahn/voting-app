@@ -152,7 +152,7 @@ status;
 ```
 
 <h1>Get files from repository and compile</h1>
-Last step is to save all files in this repository inside /var/www/vote folder
+Last step is to save all files in this repository (except sql dump file) inside /var/www/vote folder
 
 
 Then compile the C code like this:  
