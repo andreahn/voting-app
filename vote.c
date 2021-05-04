@@ -18,6 +18,7 @@ int main(int argc, char ** argv){
   sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], 59);
   mysql_real_query(conn, command, 250);
   result = mysql_store_result(conn);
+  return 0;
   if(mysql_num_rows(result) != 1) {
     mysql_close(conn);
     mysql_free_result(result);
