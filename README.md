@@ -49,7 +49,8 @@ Then you can exit:
 exit 
 ```
 <h1>Setting up Apache </h1>
-Now open a new terminal
+
+Now open a new terminal<br>
 ```
 cd /etc/  
 sudo gedit hosts  
