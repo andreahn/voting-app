@@ -11,14 +11,14 @@ session_start();
 <div class="login-box">
 <?php
 if ($_SESSION["connected"] == 1) { ?>
-  Welcome <?php echo $_SESSION["username"]?>!<br>
+  <div class="info">Welcome <?php echo $_SESSION["username"]?>!</div>
   <?php
   if ($_SESSION["voted"] == 0) {
-    echo "You have not voted yet!";?>a
+    echo '<div class="info">You have not voted yet!</div>';?>a
     <button class="button" onclick="location.href='vote.php'">Vote</button><?php
   }
   else {
-    echo "You have already voted";
+    echo '<div class="info">You have already voted</div>';
   }
   ?><br>
   <div class="user-box">
