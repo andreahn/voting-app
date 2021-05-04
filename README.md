@@ -19,8 +19,7 @@ When prompted to set password, just click enter to set none. Answer yes to other
 
 ```
 sudo mysql -u root -p 
-UPDATE mysql.user SET plugin = 'mysql_native_password' 
-WHERE user = 'root' AND plugin = 'unix_socket'; 
+UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user = 'root' AND plugin = 'unix_socket'; 
 exit
 ```
 
@@ -35,13 +34,13 @@ Exit MYSQL with CTRL + D.
 Save the <i>db-dump.sql</i> file from this repository, and cd to to where you saved it. Then import the database:
 
 ```
-mysql -u root -p Login < db-dump.sql
+mysql -u root -p Voting < db-dump.sql
 ```
 
 You can check the database was imported correctly with these commands:
 ```
 mysql -u root -p  
-USE Login;
+USE Voting;
 SELECT * FROM Users; 
 SELECT * FROM Candidates;
 ```
@@ -95,7 +94,7 @@ sudo su
 openssl genrsa 2048 > ca-key.pem
 ```
 
-For the next few commands you may be prompted to enter some information. For Common Name, enter "MariaDB admin". You can skip everything else (just click enter)
+For the next few commands you may be prompted to enter some information. For Common Name, enter "MariaDB admin". You can skip everything else (just press enter)
 ```
 openssl req -new -x509 -nodes -days 365000 -key ca-key.pem -out ca-cert.pem
 openssl req -newkey rsa:2048 -days 365000 -nodes -keyout server-key.pem -out server-req.pem
@@ -144,13 +143,13 @@ ssl-key=/etc/mysql/certs/client-key.pem
 Save and close the file. 
 
 To verify successful installation of SSL, do the following:
-
 ```
 mysql -u root -p
 SHOW VARIABLES LIKE "%ssl";
 status;
 quit
 ```
+have_ssl should be YES and in status, SSL should be Cipher in use...
 
 <h1>Get files from repository and compile</h1>
 Last step is to save all files from this repository (except sql dump file) inside /var/www/vote folder
