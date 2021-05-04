@@ -220,6 +220,11 @@ html {
     color: #F00;
 }
 
+.info {
+    font-style: oblique;
+    margin: 10px 0px 12px 0px;
+}
+
 .radio-item {
     margin-top: 10px;
     letter-spacing: 2px;
