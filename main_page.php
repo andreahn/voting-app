@@ -14,7 +14,7 @@ session_start();
       <div class="info">Welcome <?php echo $_SESSION["username"]?>!</div>
       <?php
       if ($_SESSION["voted"] == 0) {
-        echo '<div class="info">You have not voted yet!</div>';?>a
+        echo '<div class="info">You have not voted yet!</div>';?>
         <button class="button" onclick="location.href='vote.php'">Vote</button><?php
       }
       else {
