@@ -35,7 +35,7 @@ int main (int argc, char **argv) {
   else {
     mysql_close(conn);
     printf(argv[1]);
-    printf(" Incorrect ID\n");
+    printf(" does not exist, or wrong password.\n");
     return 12;
   }
   
