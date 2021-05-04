@@ -29,17 +29,19 @@ Access MYSQL again and create database:
 ```
 mysql -u root -p  
 CREATE DATABASE Voting;
-CREATE TABLE Users (id CHAR(100), password(100), voted INT);
-CREATE TABLE Candidates (name CHAR(100), votes INT);
-
-INSERT INTO Candidates (name, votes) VALUES ("Donald Trump", 0);
-INSERT INTO Candidates (name, votes) VALUES ("Joe Biden", 0);
-
-INSERT INTO Users (id, password, voted) VALUES ("someUserID", "somePassword", 0);
 ```
 
-You can check the tables were created correctly with these commands:
+Exit MYSQL with CTRL + D.
+Save the <i>db-dump.sql</i> file in this repository, and cd to to where you saved it. Then import the database:
+
 ```
+mysql -u root -p Login < db-dump.sql
+```
+
+You can check the database was imported correctly with these commands:
+```
+mysql -u root -p  
+USE Login;
 SELECT * FROM Users; 
 SELECT * FROM Candidates;
 ```
