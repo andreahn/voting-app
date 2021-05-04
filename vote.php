@@ -30,14 +30,14 @@ if ($_SESSION["connected"] == 1) { ?>
   if ($_SESSION["voted"] == 0) {
     echo "<h2>Choose a candidate</h2>";?>
     <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post">
-      <div class="radio-button">
-        <input type="radio" name="candidate" id="Joe Biden" value="Joe Biden">
-        <label>Joe Biden</label>
-      </div>
-      <div class="radio-button">
-        <input type="radio" name="candidate" id="Donald Trump" value="Donald Trump">
-        <label>Donald Trump</label>
-      </div>
+     <div class="radio-item">
+      <input type="radio" name="candidate" id="Joe Biden" value="Joe Biden">
+      <label for="Joe Biden">Joe Biden</label>
+    </div>
+    <div class="radio-item">
+      <input type="radio" name="candidate" id="Donald Trump" value="Donald Trump">
+      <label for="Donald Trump">Donald Trump</label>
+    </div>
       <a>
         <span></span>
         <span></span>
