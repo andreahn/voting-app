@@ -149,6 +149,7 @@ SHOW VARIABLES LIKE "%ssl";
 status;
 ```
 
+<h1>Get files from repository and compile</h1>
 Last step is to save all files in this repository inside /var/www/vote folder
 
 
