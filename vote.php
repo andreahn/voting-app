@@ -5,6 +5,11 @@ $login = $_SESSION["username"];
 
 <!DOCTYPE HTML>
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-box">
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,6 +52,6 @@ if ($_SESSION["connected"] == 1) { ?>
   <button onclick="location.href='logout.php'">back</button>
 <?php } ?>
 <br>
-
-
+</div>
+</body>
 </html>
