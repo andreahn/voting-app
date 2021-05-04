@@ -1,6 +1,6 @@
 -- MySQL dump 10.15  Distrib 10.0.38-MariaDB, for debian-linux-gnu (i686)
 --
--- Host: localhost    Database: Test
+-- Host: localhost    Database: Login
 -- ------------------------------------------------------
 -- Server version	10.0.38-MariaDB-0ubuntu0.16.04.1
 
@@ -48,7 +48,8 @@ DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users` (
   `id` char(100) DEFAULT NULL,
   `password` char(100) DEFAULT NULL,
-  `voted` int(11) DEFAULT NULL
+  `voted` int(11) DEFAULT NULL,
+  `locked` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -58,7 +59,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES ('test','test',0),('someUserID','somePassword',0);
+INSERT INTO `Users` VALUES ('testid','testpw',0,0),('A89FEIwlnw','R2YVG6x59Z',0,0),('4h95LTQEYC','LtWV56NP9w',0,0),('TmEmjDGu66','iF2EuyU4eX',0,0),('ngksZ1jV5M','LmI41bUr2Y',0,0),('Vcjts73nWe','EqG42GyzfL',0,0),('svhI737F1U','yn8ZNEmbX5',0,0),('69vIpgusPj','35RfRjY4nd',0,0),('AaDK859cEV','MIqv94J8E5',0,0);
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -71,4 +72,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-04 16:15:21
+-- Dump completed on 2021-05-04 16:32:35
