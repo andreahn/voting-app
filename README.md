@@ -149,6 +149,7 @@ To verify successful installation of SSL, do the following:
 mysql -u root -p
 SHOW VARIABLES LIKE "%ssl";
 status;
+quit
 ```
 
 <h1>Get files from repository and compile</h1>
@@ -157,6 +158,7 @@ Last step is to save all files from this repository (except sql dump file) insid
 
 Then compile the C code like this:  
 ```
+cd /var/www/vote
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login login.c `mysql_config --cflags --libs`
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_config --cflags --libs`
 ```
