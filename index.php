@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   // check whether login was successful
   // login.c returns 11 if successful, 12 otherwise
 if($retval == 11) {
-  echo "login success!\n";
+  echo '<div class="info">Login success!</div>';
   $_SESSION["connected"] = 1;
   $_SESSION["username"] = $login;
   $_SESSION["voted"] = $voted[0];
