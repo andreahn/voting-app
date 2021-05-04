@@ -30,14 +30,20 @@ if ($_SESSION["connected"] == 1) { ?>
   if ($_SESSION["voted"] == 0) {
     echo "<h2>Choose a candidate</h2>";?>
     <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post">
-      <input type="radio" name="candidate" id="Joe Biden" value="Joe Biden">Joe Biden<br>
-      <input type="radio" name="candidate" id="Donald Trump" value="Donald Trump">Donald Trump<br>
+      <div class="radio-button">
+        <input type="radio" name="candidate" id="Joe Biden" value="Joe Biden">
+        <label>Joe Biden</label>
+      </div>
+      <div class="radio-button">
+        <input type="radio" name="candidate" id="Donald Trump" value="Donald Trump">
+        <label>Donald Trump</label>
+      </div>
       <a>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <input type="submit" value="Place Vote">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <input type="submit" value="Place Vote">
       </a>
     </form>
     
@@ -49,13 +55,13 @@ if ($_SESSION["connected"] == 1) { ?>
     <?php
   }
   ?><br>
-  <h2>What will you do?</h2>
-  <button class="button" onclick="location.href='main_page.php'">Go back</button>
-  <button class="button" onclick="location.href='logout.php'">Logout</button>
+    <h2>What will you do?</h2>
+    <button class="button" onclick="location.href='main_page.php'">Go back</button>
+    <button class="button" onclick="location.href='logout.php'">Logout</button>
   <?php
 } else {?>
   <div class="wrong">
-  Sorry, you are not a valid user, please login!
+    Sorry, you are not a valid user, please login!
   </div>
   <button class="button" onclick="location.href='logout.php'">back</button>
 <?php } ?>
