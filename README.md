@@ -10,7 +10,7 @@ sudo apt-get install php7.0
 sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
 ```
 
-<h3>Set up database:</h3>
+<h1>Set up database:</h1>
 
 ```
 sudo mysql_secure_installation
