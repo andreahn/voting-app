@@ -32,7 +32,7 @@ CREATE DATABASE Voting;
 ```
 
 Exit MYSQL with CTRL + D.
-Save the <i>db-dump.sql</i> file in this repository, and cd to to where you saved it. Then import the database:
+Save the <i>db-dump.sql</i> file from this repository, and cd to to where you saved it. Then import the database:
 
 ```
 mysql -u root -p Login < db-dump.sql
@@ -152,7 +152,7 @@ status;
 ```
 
 <h1>Get files from repository and compile</h1>
-Last step is to save all files in this repository (except sql dump file) inside /var/www/vote folder
+Last step is to save all files from this repository (except sql dump file) inside /var/www/vote folder
 
 
 Then compile the C code like this:  
