@@ -161,4 +161,4 @@ gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login login.c `mysql_
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_config --cflags --libs`
 ```
 
-You can now access it by opening 'vote.gitctf' in your browser.
+You can now access it by opening 'vote.gitctf' in your browser. For testing purposes, assume you have ID: "testid" and password: "testpw".
