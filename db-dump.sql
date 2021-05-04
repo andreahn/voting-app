@@ -1,6 +1,6 @@
 -- MySQL dump 10.15  Distrib 10.0.38-MariaDB, for debian-linux-gnu (i686)
 --
--- Host: localhost    Database: Login
+-- Host: localhost    Database: Voting
 -- ------------------------------------------------------
 -- Server version	10.0.38-MariaDB-0ubuntu0.16.04.1
 
@@ -34,7 +34,7 @@ CREATE TABLE `Candidates` (
 
 LOCK TABLES `Candidates` WRITE;
 /*!40000 ALTER TABLE `Candidates` DISABLE KEYS */;
-INSERT INTO `Candidates` VALUES ('Donald Trump',0),('Joe Biden',0);
+INSERT INTO `Candidates` VALUES ('Elleanor Klein',0),('Jerry Lang',0);
 /*!40000 ALTER TABLE `Candidates` ENABLE KEYS */;
 UNLOCK TABLES;
 
