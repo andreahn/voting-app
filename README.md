@@ -15,7 +15,7 @@ sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
 ```
 sudo mysql_secure_installation
 ```  
-When prompted to set password, just click enter to set none. Answer yes to other questions.
+When prompted to set password, just click enter to set none. Answer 'no' to "set root password? [y/n]". Answer 'yes' to other questions.
 
 ```
 sudo mysql -u root -p 
@@ -89,6 +89,7 @@ sudo apt-get install libmysqlclient-dev
 ```
 
 <h1>Set up SSL</h1>
+
 ```
 sudo mkdir /etc/mysql/certs
 cd /etc/mysql/certs
@@ -105,7 +106,6 @@ openssl x509 -req -in server-req.pem -days 365000 -CA ca-cert.pem -CAkey ca-key.
 openssl req -newkey rsa:2048 -days 365000 -nodes -keyout client-key.pem -out client-req.pem
 openssl rsa -in client-key.pem -out client-key.pem
 openssl x509 -req -in client-req.pem -days 365000 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out client-cert.pem
-
 ```
 
 To verify it was successful, it should say 'OK' for both client and server:
