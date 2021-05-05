@@ -117,5 +117,5 @@ If you have trouble with the gdb debugger, please download envexec.sh to the sam
 unset env LINES
 unset env COLUMNS
 do your gdb stuff here and quit normally
-./envexec.sh /path/to/dummyfile [args] <-- for executing`
+./envexec.sh /path/to/dummyfile [args] <-- for executing
 ```
