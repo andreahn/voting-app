@@ -24,15 +24,15 @@ FLUSH PRIVILEGES;
 exit
 ```
 
-Access MYSQL again and create database:
-(For the user ID and password, you can set whatever you prefer)
+Access MYSQL again and create database:  
+*(NB! For the user ID and password, you can set whatever you prefer)*
 ```
 mysql -u root -p  
 CREATE DATABASE Voting;
 ```
 
-Exit MYSQL with CTRL + D.
-Save the <i>db-dump.sql</i> file **from this repository**, and cd to to where you saved it. Then import the database:
+Exit MYSQL with `CTRL + D`.  
+Save the `db-dump.sql` file **from this repository**, and cd to to where you saved it. Then import the database:
 
 ```
 mysql -u root -p Voting < db-dump.sql
@@ -89,7 +89,7 @@ sudo apt-get install libmysqlclient-dev
 ```
 
 <h1>Get files from repository and compile</h1>
-Last step is to save all files from this repository (except sql dump file) inside /var/www/vote folder
+Last step is to save all files from this repository (except sql dump file) inside `/var/www/vote folder`.
 
 
 Then compile the C code like this:  
@@ -98,5 +98,6 @@ cd /var/www/vote
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login login.c `mysql_config --cflags --libs`
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_config --cflags --libs`
 ```
-
-You can now access it by opening 'vote.gitctf' in your browser. For testing purposes, assume you have ID: "testid" and password: "testpw".
+*(NB! Ignore the warning "...login.c:39:5: warning: format not a string literal...")*  
+You can now access our voting app by opening 'vote.gitctf' in your browser.  
+For testing purposes, assume you have `ID: testid` and `password: testpw`.
