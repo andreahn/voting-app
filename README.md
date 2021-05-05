@@ -109,3 +109,13 @@ You can now access our voting app by opening 'vote.gitctf' in your browser.
 For testing purposes, assume you have `ID: testid` and `password: testpw`.
 
 <i>Hint: https://gist.github.com/apolloclark/6cffb33f179cc9162d0a</i>
+
+<h1>GDB debugger</h1>
+If you have trouble with the gdb debugger, please download envexec.sh to the same directory and do the following
+```
+./envexec.sh -d dummyfile //this opens a gdb
+unset env LINES
+unset env COLUMNS
+do your gdb stuff here and quit normally
+./envexec.sh /path/to/dummyfile [args] //for executing
+```
