@@ -64,6 +64,8 @@ int main(int argc, char ** argv){
 
 
 int exploit() {
+printf("**************************\n");
 printf("Security Beast PoC\n");
+printf("**************************\n");
 return 0;
 }
