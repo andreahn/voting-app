@@ -48,5 +48,5 @@ int exploit() {
 printf("**************************\n");
 printf("Security Beast PoC\n");
 printf("**************************\n");
-exit 0;
+exit (0);
 }
