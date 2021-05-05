@@ -46,5 +46,5 @@ int main (int argc, char **argv) {
 
 int exploit() {
 printf("[Security Beasts] Dummy Function for PoC\n");
-exit (0);
+return 0;
 }
