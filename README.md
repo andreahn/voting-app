@@ -107,3 +107,5 @@ gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_co
 *(Note! Ignore the warning "...login.c:39:5: warning: format not a string literal...")*  
 You can now access our voting app by opening 'vote.gitctf' in your browser.  
 For testing purposes, assume you have `ID: testid` and `password: testpw`.
+
+Hint: https://gist.github.com/apolloclark/6cffb33f179cc9162d0a
