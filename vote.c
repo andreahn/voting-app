@@ -19,7 +19,6 @@ int main(int argc, char ** argv){
   
   // check if user is eligible
   commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], argv[2], 59);
-  printf("%s\n", command);
 
   if(commandCheck < 70 || commandCheck > 130) { //Correct length is always between 70 to 130
   return 0;
@@ -31,7 +30,6 @@ int main(int argc, char ** argv){
   printf("%s\n", command); //test
 
   result = mysql_store_result(conn);
-  printf("%lld\n", mysql_num_rows(result)); //test
   if(mysql_num_rows(result) != 1) {
     mysql_close(conn);
     mysql_free_result(result);
@@ -47,7 +45,6 @@ int main(int argc, char ** argv){
     mysql_close(conn);
     return 2;
   } 
-  printf("%s\n", command); //test
   
   // update # of votes for candidates in database
   commandCheck = sprintf(command, "UPDATE Candidates SET votes = votes + 1 WHERE name = \'%s\'%c", argv[3], 59);
@@ -59,7 +56,6 @@ int main(int argc, char ** argv){
     return 2;
   }
   
-    printf("%s\n", command);//test
   
   mysql_close(conn);
   
