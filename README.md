@@ -27,7 +27,7 @@ exit
 ```
 
 Access MYSQL again and create database:  
-*(NB! For the user ID and password, you can set whatever you prefer)*
+*(Note! For the user ID and password, you can set whatever you prefer)*
 ```
 mysql -u root -p  
 CREATE DATABASE Voting;
@@ -104,6 +104,6 @@ gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o poc poc.c `mysql_conf
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login login.c `mysql_config --cflags --libs`
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_config --cflags --libs`
 ```
-*(NB! Ignore the warning "...login.c:39:5: warning: format not a string literal...")*  
+*(Note! Ignore the warning "...login.c:39:5: warning: format not a string literal...")*  
 You can now access our voting app by opening 'vote.gitctf' in your browser.  
 For testing purposes, assume you have `ID: testid` and `password: testpw`.
