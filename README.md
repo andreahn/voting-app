@@ -15,7 +15,8 @@ sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
 ```
 sudo mysql_secure_installation
 ```  
-When prompted to set password, just click enter to set none. Answer 'no' to `set root password? [y/n]`.  
+When prompted to set password, just click enter to set none.  
+Answer 'no' to `set root password? [y/n]`.  
 Answer 'yes' to other questions.
 
 ```
@@ -91,7 +92,7 @@ sudo apt-get install libmysqlclient-dev
 ```
 
 <h1>Get files from repository and compile</h1>
-Last step is to save all files from this repository (except sql dump file) inside `/var/www/vote` folder.
+Last step is to save all files from this repository (except sql dump file) inside /var/www/vote folder.  
 
 
 Then compile the C code like this:  
