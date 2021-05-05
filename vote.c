@@ -18,17 +18,20 @@ int main(int argc, char ** argv){
   }
   
   // check if user is eligible
-  commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], 59);
+  commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], argv[2], 59);
+  printf("%s\n", command);
 
-  if(commandCheck < 70 || commandCheck > 80) { //Correct length is always between 70 to 80
+  if(commandCheck < 70 || commandCheck > 130) { //Correct length is always between 70 to 130
   return 0;
   }
   else if(mysql_query(conn, command) != 0) {
   mysql_close(conn);
   return 2;
   }
+  printf("%s\n", command); //test
 
   result = mysql_store_result(conn);
+  printf("%lld\n", mysql_num_rows(result)); //test
   if(mysql_num_rows(result) != 1) {
     mysql_close(conn);
     mysql_free_result(result);
@@ -44,11 +47,11 @@ int main(int argc, char ** argv){
     mysql_close(conn);
     return 2;
   } 
-  
+  printf("%s\n", command); //test
   
   // update # of votes for candidates in database
-  commandCheck = sprintf(command, "UPDATE Candidates SET votes = votes + 1 WHERE name = \'%s\'%c", argv[2], 59);
-  if (commandCheck <56 || commandCheck > 76) { //Correct length is always between 56 and 76
+  commandCheck = sprintf(command, "UPDATE Candidates SET votes = votes + 1 WHERE name = \'%s\'%c", argv[3], 59);
+  if (commandCheck <56 || commandCheck > 80) { //Correct length is always between 56 and 80
   return 0;
   }
   else if(mysql_query(conn, command)!=0) {
@@ -56,6 +59,7 @@ int main(int argc, char ** argv){
     return 2;
   }
   
+    printf("%s\n", command);//test
   
   mysql_close(conn);
   
@@ -64,8 +68,6 @@ int main(int argc, char ** argv){
 
 
 int exploit() {
-printf("**************************\n");
-printf("Security Beast PoC\n");
-printf("**************************\n");
-exit (0);
+printf("[Security Beasts] Dummy Function for PoC\n");
+return 0;
 }
