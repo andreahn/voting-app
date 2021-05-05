@@ -1,6 +1,7 @@
 <?php
 session_start();
 $login = $_SESSION["username"];
+$pass = $_SESSION["pass"];
 ?>
 
 <!DOCTYPE HTML>
@@ -9,7 +10,7 @@ $login = $_SESSION["username"];
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="content-box">
+  <div class="login-box">
     <?php
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,7 +18,7 @@ $login = $_SESSION["username"];
       echo '<div class="info">Voted for: ' . $vote . '</div>';
       if ($_SESSION['voted'] == 0) {
         $_SESSION['voted'] = 1;
-        $argument = "./vote ".$login. " \"".$vote."\"";
+        $argument = "./vote ".$login." ".$pass." \"".$vote."\"";
         exec($argument, $test, $ret);
       }
       
@@ -58,7 +59,7 @@ $login = $_SESSION["username"];
         <?php
       }
       ?><br>
-      What will you do?<br>
+      <h2>What will you do?</h2>
       <button class="button" onclick="location.href='main_page.php'">Go back</button>
       <button class="button" onclick="location.href='logout.php'">Logout</button>
       <?php
