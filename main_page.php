@@ -8,7 +8,7 @@ session_start();
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-box">
+  <div class="content-box">
     <?php
     if ($_SESSION["connected"] == 1) { ?>
       <div class="info">Welcome <?php echo $_SESSION["username"]?>!</div>
