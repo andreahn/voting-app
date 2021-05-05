@@ -9,7 +9,7 @@ $login = $_SESSION["username"];
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="login-box">
+  <div class="content-box">
     <?php
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
