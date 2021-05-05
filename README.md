@@ -15,7 +15,7 @@ sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
 ```
 sudo mysql_secure_installation
 ```  
-When prompted to set password, just click enter to set none. Answer 'no' to "set root password? [y/n]". Answer 'yes' to other questions.
+When prompted to set password, just click enter to set none. Answer 'no' to `set root password? [y/n]`. Answer 'yes' to other questions.
 
 ```
 sudo mysql -u root -p 
@@ -32,7 +32,7 @@ CREATE DATABASE Voting;
 ```
 
 Exit MYSQL with CTRL + D.
-Save the <i>db-dump.sql</i> file from this repository, and cd to to where you saved it. Then import the database:
+Save the <i>db-dump.sql</i> file **from this repository**, and cd to to where you saved it. Then import the database:
 
 ```
 mysql -u root -p Voting < db-dump.sql
@@ -51,12 +51,12 @@ exit
 ```
 <h1>Setting up Apache </h1>
 
-Now open a new terminal<br>
+Now open a new terminal  
 ```
 cd /etc/  
 sudo gedit hosts  
 ```
-Below the line that says "127.0.0.1 localhost", copy and paste the following:
+Below the line that says `127.0.0.1 localhost`, copy and paste the following:
 ```
 127.0.0.1 vote.gitctf  
 ```
