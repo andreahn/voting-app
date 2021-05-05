@@ -23,7 +23,7 @@ html {
     color: #fff;
   }
   
-  .login-box {
+  .content-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -36,18 +36,18 @@ html {
     border-radius: 10px;
   }
   
-  .login-box h2 {
+  .content-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
   
-  .login-box .user-box {
+  .content-box .user-box {
     position: relative;
   }
   
-  .login-box .user-box input {
+  .content-box .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -58,7 +58,7 @@ html {
     outline: none;
     background: transparent;
   }
-  .login-box .user-box label {
+  .content-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -69,15 +69,15 @@ html {
     transition: .5s;
   }
   
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .content-box .user-box input:focus ~ label,
+  .content-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #fff;
     font-size: 15px;
   }
   
-  .login-box form a {
+  .content-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -115,7 +115,7 @@ html {
                 0 0 100px #03e9f4;
   }
   
-  .login-box a:hover {
+  .content-box a:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -125,12 +125,12 @@ html {
                 0 0 100px #03e9f4;
   }
   
-  .login-box a span {
+  .content-box a span {
     position: absolute;
     display: block;
   }
   
-  .login-box a span:nth-child(1) {
+  .content-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -148,7 +148,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(2) {
+  .content-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -167,7 +167,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(3) {
+  .content-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -186,7 +186,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(4) {
+  .content-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
