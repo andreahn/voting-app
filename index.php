@@ -23,7 +23,7 @@ session_start();
     
   }
   ?>
-  <div class="login-box">
+  <div class="content-box">
     <h2>Login</h2>
     <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post">
       <div class="user-box">
