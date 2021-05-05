@@ -83,7 +83,7 @@ Delete everything in the opened file, and replace it with the following (copy an
 ```
 Save the file and exit gedit.
 ```
-sudo a2ensite test.conf  
+sudo a2ensite vote.conf  
 systemctl reload apache2  
 sudo apt-get install libmysqlclient-dev  
 ```
