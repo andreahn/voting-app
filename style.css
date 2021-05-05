@@ -217,6 +217,7 @@ html {
 }
 
 .wrong {
+    margin: 10px 0px 12px 0px;
     color: #F00;
 }
 
