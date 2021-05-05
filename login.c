@@ -30,6 +30,8 @@ int main (int argc, char **argv) {
   MYSQL_RES *result = mysql_store_result(conn);
   if(mysql_num_rows(result) != 0) {
     row = mysql_fetch_row(result);
+    
+    // print out whether user has voted or not
     printf("%s\n",row[2]);
     mysql_close(conn);
     return 11;
