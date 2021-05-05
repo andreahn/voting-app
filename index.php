@@ -17,7 +17,6 @@ session_start();
     
     //construct command which will be passed to exec
     $argument = "./login ". $login . " ". $pass;
-    echo $argument; //added to test
     
     // call login.c with entered id and password
     exec($argument, $voted, $retval);
