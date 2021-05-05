@@ -58,7 +58,7 @@ $login = $_SESSION["username"];
         <?php
       }
       ?><br>
-      <h2>What will you do?</h2>
+      What will you do?<br>
       <button class="button" onclick="location.href='main_page.php'">Go back</button>
       <button class="button" onclick="location.href='logout.php'">Logout</button>
       <?php
