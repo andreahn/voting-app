@@ -98,6 +98,9 @@ Last step is to save all files from this repository (except sql dump file) insid
 Then compile the C code like this:  
 ```
 cd /var/www/vote
+sudo touch poc.txt
+sudo chown www-data /var/www/vote/poc.txt
+gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o poc poc.c `mysql_config --cflags --libs`
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o login login.c `mysql_config --cflags --libs`
 gcc -z execstack -fno-stack-protector -z norelro -g -O0 -o vote vote.c `mysql_config --cflags --libs`
 ```
