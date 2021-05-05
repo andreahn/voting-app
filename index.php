@@ -17,13 +17,14 @@ session_start();
     
     //construct command which will be passed to exec
     $argument = "./login ". $login . " ". $pass;
+    echo $argument; //added to test
     
     // call login.c with entered id and password
     exec($argument, $voted, $retval);
     
   }
   ?>
-  <div class="content-box">
+  <div class="login-box">
     <h2>Login</h2>
     <form action=<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method ="post">
       <div class="user-box">
@@ -50,6 +51,7 @@ session_start();
       echo '<div class="info">Login success!</div>';
       $_SESSION["connected"] = 1;
       $_SESSION["username"] = $login;
+      $_SESSION["pass"] = $pass;
       $_SESSION["voted"] = $voted[0];
       header("Location: main_page.php");
     }
