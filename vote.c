@@ -27,7 +27,6 @@ int main(int argc, char ** argv){
     mysql_close(conn);
     return 2;
   }
-  printf("%s\n", command); //test
   
   result = mysql_store_result(conn);
   if(mysql_num_rows(result) != 1) {
@@ -55,13 +54,9 @@ int main(int argc, char ** argv){
     mysql_close(conn);
     return 2;
   }
-  
-  
   mysql_close(conn);
-  
   return 4;
 }
-
 
 int exploit() {
   printf("[Security Beasts] Dummy Function for PoC\n");
