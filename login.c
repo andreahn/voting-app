@@ -28,13 +28,14 @@ int main (int argc, char **argv) {
   }
   
   MYSQL_RES *result = mysql_store_result(conn);
-  if(mysql_num_rows(result) != 0) {
+  
+  if(mysql_num_rows(result) != 0) { // successful login
     row = mysql_fetch_row(result);
     printf("%s\n",row[2]);
     mysql_close(conn);
     return 11;
   }
-  else {
+  else { // failed login
     mysql_close(conn);
     printf(argv[1]);
     printf(" does not exist, or wrong password.\n");
