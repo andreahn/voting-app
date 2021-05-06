@@ -1,4 +1,5 @@
 #!/bin/sh
+# source: https://gist.github.com/apolloclark/6cffb33f179cc9162d0a
 
 while getopts "dte:h?" opt ; do
   case "$opt" in
