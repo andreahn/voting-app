@@ -19,6 +19,8 @@ $pass = $_SESSION["pass"];
       if ($_SESSION['voted'] == 0) {
         $_SESSION['voted'] = 1;
         $argument = "./vote ".$login." ".$pass." \"".$vote."\"";
+        
+        // place vote by calling vote.c
         exec($argument, $test, $ret);
       }
       
