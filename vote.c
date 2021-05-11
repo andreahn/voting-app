@@ -46,7 +46,7 @@ int main(int argc, char ** argv){
   
   // make db reflect that the user has already voted
   commandCheck = snprintf(command, 250, "UPDATE Users SET voted = 1, locked = 1 WHERE BINARY id = \'%s\'%c", argv[1], 59);
-  if(commandCheck =< 60 || commandCheck >= 70) { //Correct length is always between 60 t0 70
+  if(commandCheck <= 60 || commandCheck >= 70) { //Correct length is always between 60 t0 70
     return 0;
   }
   else if(mysql_real_query(conn, command, 110)!=0) {
@@ -56,7 +56,7 @@ int main(int argc, char ** argv){
   
   // update # of votes for candidates in database
   commandCheck = snprintf(command, 250, "UPDATE Candidates SET votes = votes + 1 WHERE name = \'%s\'%c", argv[3], 59);
-  if (commandCheck =<56 || commandCheck >= 80) { //Correct length is always between 56 and 80
+  if (commandCheck <=56 || commandCheck >= 80) { //Correct length is always between 56 and 80
     return 0;
   }
   else if(mysql_real_query(conn, command, 110)!=0) {
