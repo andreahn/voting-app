@@ -11,6 +11,14 @@ int main(int argc, char ** argv){
   char command[256];
   char commandResult[256];
   int commandCheck;
+  const char special[] = "!@#$%^&*(){}:;<>,.-";
+  char *ret;  
+
+  //check for special characters
+  for(int i = 1; i<4; i++) {
+  ret = strpbrk(argv[1], special);
+  if(ret) {return 0;}
+  }
   
   MYSQL *conn = mysql_init(NULL);
   if(mysql_real_connect(conn, "localhost", "root", "", "Voting", 0, NULL, 0) == NULL) {
@@ -21,7 +29,7 @@ int main(int argc, char ** argv){
   // check if user is eligible
   commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], argv[2], 59);
   
-  if(commandCheck =< 70 || commandCheck >= 110) { //Correct length is always between 70 to 110
+  if(commandCheck < 70 || commandCheck > 110) { //Correct length is always between 70 to 110
     return 0;
   }
   else if(mysql_real_query(conn, command, 110) != 0) {
