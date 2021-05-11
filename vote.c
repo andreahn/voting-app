@@ -9,6 +9,7 @@ int main(int argc, char ** argv){
   MYSQL_ROW row;
   MYSQL_RES *result;
   char command[256];
+  char commandResult[256];
   int commandCheck;
   
   MYSQL *conn = mysql_init(NULL);
@@ -20,10 +21,10 @@ int main(int argc, char ** argv){
   // check if user is eligible
   commandCheck = sprintf(command, "SELECT * FROM Users WHERE BINARY id = \'%s\' AND BINARY password = \'%s\' AND voted = 0 AND locked = 0%c", argv[1], argv[2], 59);
   
-  if(commandCheck < 70 || commandCheck > 130) { //Correct length is always between 70 to 130
+  if(commandCheck < 70 || commandCheck > 110) { //Correct length is always between 70 to 110
     return 0;
   }
-  else if(mysql_query(conn, command) != 0) {
+  else if(mysql_real_query(conn, command, 110) != 0) {
     mysql_close(conn);
     return 2;
   }
@@ -40,7 +41,7 @@ int main(int argc, char ** argv){
   if(commandCheck < 60 || commandCheck > 70) { //Correct length is always between 60 t0 70
     return 0;
   }
-  else if(mysql_query(conn, command)!=0) {
+  else if(mysql_real_query(conn, command, 110)!=0) {
     mysql_close(conn);
     return 2;
   } 
@@ -50,7 +51,7 @@ int main(int argc, char ** argv){
   if (commandCheck <56 || commandCheck > 80) { //Correct length is always between 56 and 80
     return 0;
   }
-  else if(mysql_query(conn, command)!=0) {
+  else if(mysql_real_query(conn, command, 110)!=0) {
     mysql_close(conn);
     return 2;
   }
