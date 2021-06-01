@@ -13,7 +13,7 @@ int main (int argc, char **argv) {
   char *ret;  
 
   //check for special characters
-  for(int i = 1; i<3; i++) {
+  for(int i = 1; i<argc; i++) {
   ret = strpbrk(argv[i], special);
   if(ret) {return 0;}
   }
