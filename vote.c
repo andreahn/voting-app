@@ -10,7 +10,7 @@ int main(int argc, char ** argv){
   MYSQL_RES *result;
   char command[256];
   int commandCheck;
-  const char special[] = "!@#$%^&*(){}:;<>,.-";
+  const char special[] = "!@#$%^&*(){}:;<>',.-";
   char *ret;  
 
   //check for special characters
