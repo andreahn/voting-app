@@ -15,7 +15,7 @@ int main(int argc, char ** argv){
 
   //check for special characters
   for(int i = 1; i<4; i++) {
-  ret = strpbrk(argv[1], special);
+  ret = strpbrk(argv[i], special);
   if(ret) {return 0;}
   }
   
