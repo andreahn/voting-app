@@ -18,9 +18,9 @@ $pass = $_SESSION["pass"];
       echo '<div class="info">Voted for: ' . $vote . '</div>';
       if ($_SESSION['voted'] == 0) {
         $_SESSION['voted'] = 1;
+        $login = preg_replace('/[^A-Za-z0-9 ]/', '', $login);
+        $vote = preg_replace('/[^A-Za-z0-9 ]/', '', $vote);
         $argument = "./vote ".$login." ".$pass." \"".$vote."\"";
-        
-        // place vote by calling vote.c
         exec($argument, $test, $ret);
       }
       
